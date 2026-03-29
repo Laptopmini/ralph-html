@@ -1,0 +1,39 @@
+{
+  "model": "claude-opus-4-6",
+  "permissions": {
+    "allowedTools": ["Read", "Edit", "Write", "Glob", "Grep", "LS"],
+    "allow": [
+      "Bash(git *)",
+      "Bash(npm install *)",
+      "Bash(npm run build)",
+      "Bash(npm run typecheck)",
+      "Bash(npm run test)",
+      "Bash(npx playwright *)",
+      "Bash(mkdir *)",
+      "Bash(touch *)",
+      "Bash(mv *)",
+      "Bash(cp *)",
+      "Bash(rm src/*)",
+      "Bash(rm tests/*)"
+    ],
+    "deny": [
+      "Read(.env*)",
+      "Read(*.pem)",
+      "Read(*.key)",
+      "Read(*.cert)",
+      "Bash(npm start)",
+      "Bash(npm run dev)",
+      "Bash(npx serve *)",
+      "Bash(npx vite)",
+      "Bash(npx next dev)",
+      "Bash(rm -rf *)",
+      "Read(.prds/*)",
+      "Glob(.prds/*)",
+      "Grep(.prds/*)",
+      "Bash(git reset *)",
+      "Bash(git checkout *)",
+      "Bash(git rebase *)",
+      "Bash(git stash *)"
+    ]
+  }
+}

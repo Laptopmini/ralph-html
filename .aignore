@@ -1,0 +1,11 @@
+# .aignore
+
+# Ralph lock file
+.ralph.lock
+
+# Ignore the previously generated PRDs archive
+.prds/
+
+# Ralph scripts
+.github/scripts/backpressure.sh
+.github/scripts/ralph.sh
