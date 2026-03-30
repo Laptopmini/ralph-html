@@ -41,6 +41,8 @@ Read the following PRD. For each unchecked task, generate exactly the files desc
 
 Read package.json before generating tests to understand which dependencies and test runners are available.
 
+You are running in non-interactive mode, if you have a question, pick the solution which does not break an existing constraint.
+
 - DO NOT write application source code. Only write config files and test files.
 - Treat each checkbox item as a single atomic unit of work.
   - When finished, each task should have only a single file to execute to validate the task.
@@ -79,7 +81,7 @@ $PRD
 
 echo "🟡 Handing control to $ENGINE..."
 if [[ "$ENGINE" == "claude" ]]; then
-    claude -p "$AGENT_PROMPT" --allowedTools "Read,Write,Glob,Grep"
+    claude -p "$AGENT_PROMPT" --allowedTools "Read,Write,Glob,Grep" --model claude-opus-4-6
 else
     opencode run "$AGENT_PROMPT"
 fi
