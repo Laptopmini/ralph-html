@@ -22,20 +22,6 @@ npm pkg set scripts.test="jest && playwright test" \
             engines.node=">=24.14.1" \
             engines.npm=">=11.11.0"
 
-# Create jest.config.ts
-cat > jest.config.ts << 'EOF'
-import type { Config } from '@jest/types';
-
-const config: Config.InitialOptions = {
-  // FIXME: If you are an agent, complete this configuration and remove this comment.
-  transform: {
-    "^.+\\.(js|jsx|ts|tsx)?$": "@swc/jest",
-  },
-};
-
-export default config;
-EOF
-
 # Install the playwright dependencies
 npx playwright install chromium
 
