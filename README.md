@@ -1,4 +1,4 @@
-# ralph-node
+# ralph-node-base
 
 A custom implementation of the Ralph Loop for Node.js — a test-gated, autonomous AI development cycle that turns PRDs into working code.
 
@@ -18,7 +18,7 @@ This repo is an exercise in applied AI engineering — specifically in designing
 **Pick a starting point:**
 
 - **From scratch** — fork this repo and run `nvm use && sh init.sh` to bootstrap. This lets you optimize the initial PRD and infrastructure.
-- **From a fork** — browse [existing forks](https://github.com/search?q=owner%3ALaptopmini%20topic%3Aralph-node&type=repositories) and start from one that already has an initialized project. This saves tokens by iterating from a checkpoint instead of regenerating from zero.
+- **From a fork** — browse [existing forks](https://github.com/topics/ralph-node) and start from one that already has an initialized project. This saves tokens by iterating from a checkpoint instead of regenerating from zero.
 
 Any repo — this one or a fork — can serve as the starting point for the next iteration.
 
