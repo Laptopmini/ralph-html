@@ -195,7 +195,7 @@ $PRD_CONTENT
         fi
         
         if [ -n "$PROPOSED_LEDGER" ]; then
-            CURRENT_TASK_LABEL=$(printf '%s' "$PROPOSED_LEDGER" | tr -d '\n' | grep -o '{.*}' | jq -r '.task')
+            CURRENT_TASK_LABEL=$(printf '%s' "$PROPOSED_LEDGER" | tr -d '\n' | sed -nE 's/.*"task"[[:space:]]*:[[:space:]]*"([^"]+)".*/\1/p')
             echo "$PROPOSED_LEDGER" >> .agent-ledger.jsonl
         fi
 

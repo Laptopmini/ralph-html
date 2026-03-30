@@ -13,7 +13,7 @@ fi
 
 # Initialize the npm project
 npm init -y && \
-npm install -D @playwright/test jest @biomejs/biome typescript ts-node @swc/jest @swc/core && \
+npm install -D @playwright/test jest @types/jest @biomejs/biome typescript ts-node @swc/jest @swc/core && \
 npm pkg set scripts.test="jest && playwright test" \
             scripts.backpressure="sh .github/scripts/backpressure.sh" \
             scripts.ralph="sh .github/scripts/ralph.sh" \
