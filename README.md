@@ -19,6 +19,8 @@ All `ralph-node` repos begin from the same genesis, and branch off a specific up
 - **Jest** — `jest.config.js` with `@swc/jest` transform scoped to unit tests, plus a sanity test
 - **Playwright** — `playwright.config.ts` targeting Chromium at `localhost:3000`, plus a sanity E2E test
 - **Root test script** — `npm test` wired to run unit then E2E tests sequentially
+- **Static HTML website** — Configured to serve a static HTML based application
+- **Playwright webServer** — Updated Playwright configuration with webServer block for proper test execution
 
 ## License
 
