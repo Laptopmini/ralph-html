@@ -1,7 +1,8 @@
-Implemented first task: TypeScript configuration.
+Implemented second task: Jest configuration.
 
-- Created `tsconfig.json` with target ES2022, module NodeNext, moduleResolution NodeNext, strict true, outDir dist/, include `**/*`.
-- Created `src/index.ts` with `export {};`.
-- package.json has `"type": "commonjs"` — with NodeNext module mode, TypeScript respects the package.json type field and treats .ts files as CJS. This should be compatible.
-- The `include: ["**/*"]` will pick up node_modules — if tsc complains, may need to add `exclude: ["node_modules", "dist"]`. Watch for this on retry.
-- Validation: `npx tsc --noEmit`
+- Created `jest.config.js` using `@swc/jest` transform, `node` test environment, and `testMatch` scoped to `**/tests/unit/**/*.test.ts` to avoid picking up Playwright `.spec.ts` files.
+- Added `"test:unit": "jest"` script to `package.json`.
+- Created `tests/unit/setup.test.ts` with a single `expect(1 + 1).toBe(2)` assertion.
+- `package.json` uses `"type": "commonjs"` so `jest.config.js` (CommonJS format with `module.exports`) is correct.
+- Validation command: `npx jest`
+- If `@swc/jest` transform fails to handle `.ts`, ensure `@swc/core` is present (it is in devDependencies). If `testMatch` is too narrow, widen it. Watch for any module resolution issues due to NodeNext in tsconfig vs Jest's own transform.

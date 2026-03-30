@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest && playwright test",
+    "test:unit": "jest",
     "backpressure": "sh .github/scripts/backpressure.sh",
     "ralph": "sh .github/scripts/ralph.sh",
     "lint": "biome lint --write .",
