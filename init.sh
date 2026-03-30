@@ -13,14 +13,14 @@ fi
 
 # Initialize the npm project
 npm init -y && \
-npm install -D @playwright/test jest @types/jest @biomejs/biome typescript ts-node @swc/jest @swc/core && \
 npm pkg set scripts.test="jest && playwright test" \
             scripts.backpressure="sh .github/scripts/backpressure.sh" \
             scripts.ralph="sh .github/scripts/ralph.sh" \
-            scripts.lint="biome lint --write ." \
-            scripts.format="biome format --write ." \
+            scripts.lint="biome check --write ." \
+            scripts.check-types="tsc --noEmit" \
             engines.node=">=24.14.1" \
-            engines.npm=">=11.11.0"
+            engines.npm=">=11.11.0" && \
+npm install -D @playwright/test jest @types/jest @biomejs/biome@2.4.8 typescript ts-node @swc/jest @swc/core
 
 # Install the playwright dependencies
 npx playwright install chromium

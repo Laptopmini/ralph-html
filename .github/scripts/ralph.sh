@@ -115,7 +115,7 @@ while true; do
     MEMORY_CONTEXT=$(cat MEMORY.md 2>/dev/null || echo "Scratchpad empty.")
     PRD_CONTENT=$(cat PRD.md)
 
-    PROMPT="
+    AGENT_PROMPT="
 $RALPH_PROMPT${ERROR_FEEDBACK:+$'\n'}$ERROR_FEEDBACK
 
 --- ARCHITECTURAL HISTORY (Last 5 Entries) ---
@@ -138,7 +138,7 @@ $PRD_CONTENT
     ENGINE_EXIT=0
     if [[ "$ENGINE" == "claude" ]]; then
         set +e
-        OUTPUT=$(claude -p "$PROMPT" --allowedTools "Read,Edit,Write,Glob,Grep,Bash")
+        OUTPUT=$(claude -p "$AGENT_PROMPT" --allowedTools "Read,Edit,Write,Glob,Grep,Bash")
         ENGINE_EXIT=$?
         set -e
 
@@ -150,7 +150,7 @@ $PRD_CONTENT
         fi
     else
         set +e
-        OUTPUT=$(opencode run "$PROMPT")
+        OUTPUT=$(opencode run "$AGENT_PROMPT")
         ENGINE_EXIT=$?
         set -e
     fi

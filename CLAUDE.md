@@ -22,8 +22,7 @@ After init, `npm run ralph` starts the loop for subsequent PRDs.
 - `npm test` — Run Jest unit tests then Playwright E2E tests (sequential)
 - `npm run ralph` — Start the Ralph Loop (reads PRD.md, implements tasks, validates, commits)
 - `npm run backpressure` — Generate test files from PRD.md (run before ralph to create test backpressure)
-- `npm run lint` — Lint with Biome (auto-fix)
-- `npm run format` — Format with Biome (auto-fix)
+- `npm run lint` — Lint & Format with Biome (auto-fix)
 
 ## Code Style
 
